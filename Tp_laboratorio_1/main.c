@@ -46,13 +46,13 @@ int main()
         case 1:
             x=numero();
             system("cls");
-            printf("El numero es:%f\n",x);
+            printf("El numero es:%f\n\n",x);
             pusonumeroUno=1;
             break;
         case 2:
             y=numero();
             system("cls");
-            printf("El numero es:%f\n",y);
+            printf("El numero es:%f\n\n",y);
             pusonumeroDos=1;
             break;
         case 3:
@@ -66,9 +66,17 @@ int main()
             printf("El resultado de la resta es %f\n\n", resultado);
             break;
         case 5:
+            if(y != 0)
+            {
             resultado=division (x, y);
             system("cls");
             printf("El resultado de la division es %f\n\n", resultado);
+            }
+            else
+            {
+                system("cls");
+                printf("NO se puede dividir por 0\n\n");
+            }
             break;
         case 6:
             resultado=multiplicacion (x, y);
@@ -76,9 +84,17 @@ int main()
             printf("El resultado de la multiplicacion es %f\n\n", resultado);
             break;
         case 7:
-            resultado=factorial(x);
-            system("cls");
-            printf("El resultado del factorial de %f es %f\n\n", x, resultado);
+            if (x >= 0)
+            {
+                resultado=factorial(x);
+                system("cls");
+                printf("El resultado del factorial de %f es %f\n\n", x, resultado);
+            }
+            else
+            {
+                system("cls");
+                printf("NO se puede saca el factorial de un numero negativo\n\n");
+            }
             break;
         case 8:
             resultado=suma(x,y);
@@ -102,7 +118,7 @@ int main()
             break;
 
         default:
-            printf("Ingrese un numero del 1 al 9\n");
+            printf("Ingrese una opcion del menu\n\n");
 
         }
     }
